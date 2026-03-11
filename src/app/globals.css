@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-background-secondary: #0d0b0a;
+  --color-brand-brown-light: #8b5e3c;
+  --color-brand-brown: #5d4037;
+  --color-brand-brown-dark: #3e2723;
+  --font-sans: var(--font-inter);
+  --font-serif: "Playfair Display", "Ibarra Real Nova", serif;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --font-inter: "Inter", sans-serif;
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+  }
+
+  .glass-nav {
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .cinematic-shadow {
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(139, 94, 60, 0.4);
+  }
+
+  .bg-noise {
+    position: relative;
+  }
+
+  .bg-noise::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(139, 94, 60, 0.3);
+  color: #fff;
+}
