@@ -2,11 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/portfolio',
   images: {
     unoptimized: true,
   },
-  // Oyage repository eka 'user.github.io/portfolio' nam:
-  // basePath: '/portfolio',
 };
 
 export default nextConfig;
